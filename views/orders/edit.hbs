@@ -1,0 +1,37 @@
+<h3>Edit Order</h3>
+<div class="row">
+    <form action="/orders/{{order._id}}" method="POST" class="col s12">
+        <input type="hidden" name = "_method" value= "PUT">
+        <div class="row">
+            <div class="input-field">
+                <select id="type" name="type">
+                    {{#select order.type}}
+                        <option value="Simple">Simple ($20-$30)</option>
+                        <option value="Intricate">Intricate ($40-$60)</option>
+                        <option value="Extravagant" >Extravagant ($60-$100)</option>
+                    {{/select}}
+                </select>
+                <label for="type">Type</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="title" name="title" value = "{{order.title}}">
+                <label for="title">Title</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <h5>Describe your custom order (include links if necessary):</h5>
+                <textarea id="description" name="description">{{order.description}}</textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Save" class="btn green">
+            <a href="/dashboard" class="btn red">Cancel</a>
+        </div>
+    </form>
+</div>

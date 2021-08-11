@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BKrafts</title>
+
+    <!-- IMPORTED STYLESHEETS -->
+
+
+    <!-- Custom -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Materialize Icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <div class="navbar-fixed">
+    <nav class = "grey lighten-5" >
+        <div class="container nav-wrapper">
+            <a href="#" class="brand-logo center black-text">BK</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons icon-black">menu</i></a>
+            <ul class="left hide-on-med-and-down">
+                <li><a class = "black-text" href="">Home</a></li>
+                <li><a class = "black-text" href="">Options</a></li>
+                <li><a class = "black-text" href="">Gallery</a></li>
+            </ul>
+            <ul class="right hide-on-med-and-down">
+                {{{body}}}
+            </ul>
+        </div>
+    </nav>
+    </div>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li><a  href="">Home</a></li>
+        <li><a  href="">Options</a></li>
+        <li><a  href="">Gallery</a></li>
+    </ul>
+
+    <div class="hero-image">
+    <div class="hero-text container ">
+        <h1>BKrafts</h1>
+        <p>Custom scroll saw and woodcut art</p>
+        <a href = "/auth/google" class = "waves-effect green darken-1 btn">
+            <i class="fab fa-google left"></i>Log In With Google
+        </a>
+    </div>
+    </div>
+
+
+
+
+</body>
+
+    <!-- IMPORTED SCRIPTS -->
+    
+    <!-- Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems, {});
+    });
+    </script>
+
+</html>
