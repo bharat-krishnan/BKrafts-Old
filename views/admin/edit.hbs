@@ -1,0 +1,23 @@
+<h3>Edit Order</h3>
+<div class="row">
+    <form action="/admin/{{order._id}}" method="POST" class="col s12">
+        <input type="hidden" name = "_method" value= "PUT">
+        <div class="row">
+            <div class="input-field">
+                <select id="status" name="status">
+                    {{#select order.status}}
+                        <option value="Not Started">Not Started</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Complete">Complete</option>
+                    {{/select}}
+                </select>
+                <label for="status">status</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Save" class="btn green">
+            <a href="/admin" class="btn red">Cancel</a>
+        </div>
+    </form>
+</div>

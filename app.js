@@ -43,12 +43,12 @@ app.use(passport.session());
 
 
 //Handlebar Helpers
-const {formatDate, select} = require('./helpers/hbs.js');
+const {formatDate, select, editIcon, truncate, stripTags} = require('./helpers/hbs.js');
 
 //Setting up Handlebars & adding one logic helper                                                                                                                                                                        
 const exphbs = require('express-handlebars');
 app.engine('hbs', exphbs({helpers: {
-    formatDate, select
+    formatDate, select, editIcon, truncate, stripTags
 }, defaultLayout: 'main', extname: 'hbs'}));
 app.set('view engine', '.hbs');
 
@@ -84,6 +84,7 @@ if(process.env.NODE_ENV === 'development'){
 app.use('/', require('./routes/index.js'));
 app.use('/auth', require('./routes/auth.js'));
 app.use('/orders', require('./routes/orders.js'));
+app.use('/admin', require('./routes/admin.js'));
 
 //Starting Up Server
 const PORT = process.env.PORT || 5000;

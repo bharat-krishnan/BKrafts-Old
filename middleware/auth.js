@@ -1,6 +1,6 @@
 module.exports = {
     ensureAuth: function(req,res,next){
-        if(req.isAuthenticated){
+        if(req.user){
             return next();
         }
         else{
@@ -12,7 +12,10 @@ module.exports = {
             return next();
         }
         else{
-            res.redirect('/dashboard');
+            if(req.user.email == "bharatpkrishnan@gmail.com")
+                res.redirect('/admin');
+            else
+             res.redirect('/dashboard');
         }
     },
     ensureAdmin:function(req,res,next){

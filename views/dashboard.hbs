@@ -1,35 +1,44 @@
-<h6>Dashboard</h6>
-<h3>Welcome {{name}}</h3>
-<p>Here are your orders</p>
-{{> _add_btn}}
+<div style = "padding: 30px" class="center">
+    <h3>{{name}}'s Dashboard</h3>
+    <p>Here are your orders...</p>
+</div>
 {{#if orders}}
-    <table class="striped">
+    <hr class="rounded">
+    <div class="center">
+        <h5 style = "white-space: nowrap;">
+            {{> _add_btn}} New Order
+        </h5>
+    </div>
+    
+    <div style="overflow-x:auto;">
+    <table  class="striped">
         <thead>
-            <tr>
+            <tr >
                 <th>Title</th>
                 <th>Type</th>
                 <th>Date</th>
-                <th>Status</th>
+                <th style = "padding-left: 20px;">Status</th>
                 <th></th>
             </tr>
         </thead>
+        <hr class="rounded">
         <tbody>
             {{#each orders}}
                 <tr>
-                    <td><a href="/orders/edit/{{_id}}">{{title}}</a></td>
+                    <td><a href="/orders/{{_id}}">{{title}}</a></td>
                     <td>{{type}}</td>
-                    <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss a'}}</td>
+                    <td>{{formatDate createdAt 'MMMM Do YYYY'}}</td>
                     {{#ifCond status "Not Started"}}
-                        <td><span class="p-5 red dash-status">{{status}}</span></td>
+                        <td><span style = "white-space: nowrap; border-radius: 25px;" class="p-5 red dash-status">{{status}}</span></td>
                     {{else}}
                         {{#ifCond status "In Progress"}}
-                             <td><span class="p-5 orange dash-status">{{status}}</span></td>
+                             <td><span style = "white-space: nowrap; border-radius: 25px;" class="p-5 orange dash-status">{{status}}</span></td>
                         {{else}}
-                            <td><span class="p-5 orange dash-status">{{status}}</span></td>
+                            <td><span style = "white-space: nowrap; border-radius: 25px;" class="p-5 green dash-status">{{status}}</span></td>
                         {{/ifCond}}
                     {{/ifCond}}
-                    <td>
-                        <div>
+                    <td style = "white-space: nowrap;">
+                        <div >
                         <a href="/orders/edit/{{_id}}" class="btn btn-float green darken-3">
                             <i class="fas fa-edit"></i>
                         </a>
@@ -46,7 +55,16 @@
             {{/each}}
         </tbody>
     </table>
+    </div>
+    <hr style = "margin-top: 20px;" class="rounded">
+    <div class="section"></div>
 {{else}}
-    <p>You haven't made any orders</p>
+    <hr class="rounded">
+    <div class="center">
 
+        <h5 style = "white-space: nowrap;">
+            {{> _add_btn}} New Order
+        </h5>  
+    </div>
+    <hr style = "margin-top: 20px; margin-bottom: 20px" class="rounded">
 {{/if}}

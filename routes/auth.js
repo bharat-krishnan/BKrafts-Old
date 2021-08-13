@@ -12,7 +12,6 @@ router.get('/google/callback', passport.authenticate('google', {
         failureRedirect: '/'
     }),
     (req, res) => {
-        console.log("HELLOHELLOHELOEHLOEHLEOHLEHOHOEHLEHLOHEOHELHDOHEOLEHELH");
         if(req.user.email === "bharatpkrishnan@gmail.com")
             res.redirect('/admin');
         else
@@ -22,7 +21,6 @@ router.get('/google/callback', passport.authenticate('google', {
 
 //GET /auth/logout
 router.get('/logout', (req,res) => {
-    console.log('hello');
     req.logout();
     console.log(req.isAuthenticated);
     console.log(req.user);

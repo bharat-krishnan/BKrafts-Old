@@ -22,14 +22,15 @@
 
 <body>
     <div class="navbar-fixed">
-    <nav class = "grey lighten-5" >
+    <nav class = "white" >
         <div class="container nav-wrapper">
-            <a href="#" class="brand-logo center black-text">BK</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons icon-black">menu</i></a>
+            <a href="#" class="brand-logo center black-text hide-on-small-only"><i class="fab fa-lg fa-pagelines"></i></a>
+            <a href="#" class="brand-logo left black-text hide-on-med-and-up show-on-small-only"><i style = "margin-top: 12.5px;" class="fab fa-lg fa-pagelines"></i></a>
+            <a href="#" data-target="mobile-demo" class="right sidenav-trigger"><i class="material-icons icon-black">menu</i></a>
             <ul class="left hide-on-med-and-down">
-                <li><a class = "black-text" href="">Home</a></li>
-                <li><a class = "black-text" href="">Options</a></li>
-                <li><a class = "black-text" href="">Gallery</a></li>
+                <li><a class = "black-text" href="">HOME</a></li>
+                <li><a class = "black-text" href="">OPTIONS</a></li>
+                <li><a class = "black-text" href="">GALLERY</a></li>
             </ul>
             <ul class="right hide-on-med-and-down">
                 {{{body}}}
@@ -39,20 +40,44 @@
     </div>
 
     <ul class="sidenav" id="mobile-demo">
-        <li><a  href="">Home</a></li>
-        <li><a  href="">Options</a></li>
-        <li><a  href="">Gallery</a></li>
+        <li style = "padding-top:20px" ><a href="">Home</a></li>
+        <li ><a href="">Options</a></li>
+        <li ><a href="">Gallery</a></li>
+        <li ><a href="/auth/google">Login/Signup</a></li>
     </ul>
 
     <div class="hero-image">
-    <div class="hero-text container ">
+    <div class= "hide-on-small-only hero-text-else">
         <h1>BKrafts</h1>
         <p>Custom scroll saw and woodcut art</p>
         <a href = "/auth/google" class = "waves-effect green darken-1 btn">
-            <i class="fab fa-google left"></i>Log In With Google
+            Make An Order
+        </a>
+    </div>
+     <div class="hide-on-med-and-up show-on-small-only hero-text-mobile">
+        <h1>BKrafts</h1>
+        <p>Custom scroll saw and woodcut art</p>
+        <a href = "/auth/google" class = "waves-effect green darken-1 btn">
+            Make An Order
         </a>
     </div>
     </div>
+
+<div class="section"></div>
+<div class="section"></div>
+<div class="section"></div>
+<div class="section"></div>
+<div class="section"></div>
+<div class="section"></div>
+<div class="section"></div>
+<div class="section"></div>
+<div class="section"></div>
+<div class="section"></div>
+<div class="section"></div>
+<div class="section"></div>
+<div class="section"></div>
+<div class="section"></div>
+<div class="section"></div>
 
 
 
@@ -66,7 +91,7 @@
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('.sidenav');
-        var instances = M.Sidenav.init(elems, {});
+        var instances = M.Sidenav.init(elems, {edge: 'right'});
     });
     </script>
 

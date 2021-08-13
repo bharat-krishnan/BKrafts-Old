@@ -2,12 +2,59 @@ const express = require('express');
 const router = express.Router();
 const {ensureAuth} = require('../middleware/auth');
 const Order = require('../models/Order');
+const User = require('../models/User');
 
 //GET /orders/add
 //Show add page
 router.get('/add', ensureAuth, (req,res) =>{
     res.render('orders/add');
 });
+
+//GET /orders/user/:userid
+//Show add page
+router.get('/user/:userid', ensureAuth, async (req,res) =>{
+    console.log('calling here');
+    try{
+
+        let user = await User.findById(req.params.userid).lean();
+        let orders = await Order.find({user: req.params.userid}).sort({createdAt: 'desc'}).lean();
+        console.log(orders);
+        res.render('orders/user',{
+            user,
+            orders
+        })
+    }
+    catch(err){
+        res.render('error/500');
+    }
+});
+
+//GET /orders/:id
+//Show add page
+router.get('/:id', ensureAuth, async (req,res) =>{
+    try{
+        let order = await Order.findById(req.params.id).populate('user').lean();
+        if(!order){
+            res.render('error/404');
+        }
+        else{
+            console.log('hello test');
+            if(req.user.id == order.user._id || req.user.email === "bharatpkrishnan@gmail.com"){
+                res.render('orders/show', {
+                    order,
+                    user: req.user
+                })
+            }
+            else{
+                res.redirect('/dashboard');
+            }
+        }
+    }
+    catch(err){
+        res.render('error/404');
+    }
+});
+
 
 //POST /orders
 //Process new order form

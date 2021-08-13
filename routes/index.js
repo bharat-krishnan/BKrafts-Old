@@ -15,16 +15,10 @@ router.get('/', ensureGuest, (req,res) =>{
 router.get('/dashboard', ensureAuth, async (req,res) =>{
     try{
         const orders = await Order.find({user: req.user.id}).populate('user').sort({createdAt: 'desc'}).lean();
-        console.log(orders);
-        const ns = "Not Started";
-        const ip = "In Progress"
-        const comp = "Complete";
         res.render('dashboard', {
             name: req.user.firstName,
             orders,
-            ns,
-            ip,
-            comp
+            email: req.user.email
         });
     }
     catch(err)
@@ -38,13 +32,11 @@ router.get('/dashboard', ensureAuth, async (req,res) =>{
 //Admin Dashboard
 router.get('/admin', ensureAdmin, async (req,res) =>{
     try{
-        console.log('SUCCESS');
         const orders = await Order.find().populate('user').sort({createdAt: 'desc'}).lean();
-        console.log('hello');
-        console.log(orders);
         res.render('admin', {
             name: req.user.firstName,
-            orders
+            orders,
+            email: req.user.email
         });
     }
     catch(err)

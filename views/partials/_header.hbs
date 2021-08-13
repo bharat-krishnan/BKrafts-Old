@@ -5,8 +5,18 @@
             <a href="" data-target = "mobile-demo" class="sidenav-trigger show-on-large">
                 <i class="fa fa-bars"></i>
             </a>
-            <ul class="sidenav" id = mobile-demo>
-                <li><a href="/dashboard">Dashboard</a></li>
+            <ul class="right hide-on-med-and-down">
+                <a href = "/auth/logout" class = "waves-effect green darken-4 btn">
+                    Logout
+                </a>
+            </ul>
+            <ul class="sidenav" id = "mobile-demo">
+
+                {{#ifCond email "bharatpkrishnan@gmail.com"}}
+                    <li style = "padding-top:20px"><a href="/admin">Master Dashboard</a></li>
+                {{else}}
+                    <li style = "padding-top:20px"><a href="/dashboard">Dashboard</a></li>
+                {{/ifCond}}
                 <li><a href="/auth/logout">Logout</a></li>
             </ul>
 

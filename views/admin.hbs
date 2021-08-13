@@ -1,16 +1,18 @@
-<h6>Admin</h6>
-<h3>Welcome {{name}}</h3>
-<p>Your Orders my G wagwan</p>
-{{> _add_btn}}
+<div style = "padding: 30px" class="center">
+    <h3>{{name}}'s Master Dashboard</h3>
+    <p>Here are your projects...</p>
+</div>
 {{#if orders}}
+<hr class="rounded">
+<div style="overflow-x:auto;">
     <table class="striped">
         <thead>
             <tr>
                 <th>Title</th>
                 <th>Type</th>
+                <th>Customer</th>
+                <th style = "padding-left: 20px;">Status</th>
                 <th>Date</th>
-                <th>Status</th>
-                <th>email</th>
                 <th></th>
             </tr>
         </thead>
@@ -19,15 +21,36 @@
                 <tr>
                     <td><a href="/orders/{{_id}}">{{title}}</a></td>
                     <td>{{type}}</td>
-                    <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss a'}}</td>
-                    <td><span class="dash-status">{{status}}</span></td>
-                    <td>{{user.email}}</td>
-                    <td></td>
+                    <td style = "white-space: nowrap;">
+                        <div class="chip">
+                            <img src="{{user.image}}" alt="">
+                            <a class = "hide-on-med-and-down" href="/orders/user/{{user._id}}">{{user.displayName}}</a>
+                            <a class = "hide-on-large-only show-on-medium-and-down" href="/orders/user/{{user._id}}">{{user.firstName}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                        </div>
+                    </td>
+                     {{#ifCond status "Not Started"}}
+                        <td><span style = "white-space: nowrap; border-radius: 25px;" class="p-5 red dash-status">{{status}}</span></td>
+                    {{else}}
+                        {{#ifCond status "In Progress"}}
+                             <td><span style = "white-space: nowrap; border-radius: 25px;" class="p-5 orange dash-status">{{status}}</span></td>
+                        {{else}}
+                            <td><span style = "white-space: nowrap; border-radius: 25px;" class="p-5 green dash-status">{{status}}</span></td>
+                        {{/ifCond}}
+                    {{/ifCond}}
+                    <td>{{formatDate createdAt 'MMMM Do YYYY'}}</td>
+                    <td>
+                        <a href="/admin/edit/{{_id}}" class="btn btn-float green darken-3">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                    </td>
                 </tr>
             {{/each}}
         </tbody>
     </table>
+</div>
+<hr style = "margin-top: 20px; margin-bottom: 20px" class="rounded">
 {{else}}
-    <p>You haven't made any orders</p>
-
+<hr class="rounded">
+    <p class = "center">You have no pending projects</p>
+<hr style = "margin-top: 20px; margin-bottom: 20px" class="rounded">
 {{/if}}
