@@ -1,9 +1,14 @@
 <div class="row">
     <div class="col m12">
-        <h3>{{user.displayName}}</h3>
+             <h3>{{user.displayName}}</h3>
         <div class="card order">
             <div class="card-content">
-                <span class="card-title">Contact:</span>{{user.email}}
+                <span class="card-title">Contact:</span>
+                <div class="chip">
+                    <img src="{{user.image}}" alt="">
+                     <a href="mailto:{{user.email}}" class="">{{user.email}}</a>
+                </div>
+               
             </div>
         </div>
         <div class="card order">
@@ -36,7 +41,7 @@
             {{/ifCond}}
             {{#ifCond status "Complete"}}
             <div class="col m12">
-            <div class="card order col m8 s12 green lighten-3">
+            <div class="card order col m8 green lighten-3">
                 <div class="card-content">
                     {{formatDate createdAt 'MMMM Do YYYY'}}
                     <span class="card-title">{{title}}: {{status}}</span>
