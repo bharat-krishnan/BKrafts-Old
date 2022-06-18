@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BKrafts</title>
+    <link rel="icon" href="images/leaves.svg">
 
     <!-- IMPORTED STYLESHEETS -->
 
@@ -16,87 +18,306 @@
     <!-- Materialize Icons-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
 <body>
     <div class="navbar-fixed">
-    <nav class = "white" >
-        <div class="container nav-wrapper">
-            <a href="#" class="brand-logo center black-text hide-on-med-and-down"><i class="fab fa-lg fa-pagelines"></i>BKrafts</a>
-            <a href="#" class="brand-logo left black-text hide-on-large-only hide-on-small-only"><i class="fab fa-lg fa-pagelines"></i>BKrafts</a>
-            <a href="#" class="brand-logo left black-text hide-on-med-and-up"><i  style = "padding-top:12px;" class="fab fa-lg fa-pagelines"></i></a>
-            <a href="#" data-target="mobile-demo" class="right sidenav-trigger"><i class="material-icons icon-black">menu</i></a>
-            <ul class="left hide-on-med-and-down">
-                <li><a class = "black-text" href="">HOME</a></li>
-                <li><a class = "black-text" href="">PRICING</a></li>
-                <li><a class = "black-text" href="">GALLERY</a></li>
-            </ul>
-            <ul class="right hide-on-med-and-down">
-                {{{body}}}
-            </ul>
-        </div>
-    </nav>
+        <nav class="white">
+            <div class="container nav-wrapper">
+                <a href="#" class="brand-logo center black-text hide-on-med-and-down">BKrafts<img
+                        src="images/leaves.svg" class="small-icon-desktop" alt=""></a>
+                <a href="#" class="brand-logo left black-text hide-on-large-only hide-on-small-only">BKrafts</a>
+                <a href="#" class="brand-logo left black-text hide-on-med-and-up"><img src="images/leaves.svg"
+                        class="small-icon" alt=""></a>
+                <a href="#" data-target="mobile-demo" class="right sidenav-trigger"><i
+                        class="material-icons icon-black">menu</i></a>
+                <ul class="left hide-on-med-and-down">
+                    <li><a class="black-text" href="#">HOME</a></li>
+                    <li><a class="black-text" href="#Gallery">GALLERY</a></li>
+                    <li><a class="black-text" href="#Pricing">PRICING</a></li>
+                </ul>
+                <ul class="right hide-on-med-and-down">
+                    {{{body}}}
+                </ul>
+            </div>
+        </nav>
     </div>
 
     <ul class="sidenav" id="mobile-demo">
-        <li style = "padding-top:20px" ><a href="">Home</a></li>
-        <li ><a href="">Options</a></li>
-        <li ><a href="">Gallery</a></li>
-        <li ><a href="/auth/google">Login/Signup</a></li>
+        <li style="padding-top:20px"><a href="">Home</a></li>
+        <li><a href="#Pricing">Pricing</a></li>
+        <li><a href="#Gallery">Gallery</a></li>
+        <li><a href="/auth/google">Login/Signup</a></li>
     </ul>
 
-    <div class="hero-image hide-on-small-only">
-    <div class= "hero-text">
-        <h1>Welcome to BKrafts</h1>
-        <p>Custom scroll saw and woodcut art</p>
-        <a href = "/auth/google" class = "waves-effect green darken-1 btn">
-            Make An Order
-        </a>
-    </div>
-    </div>
-    <!-- For Mobile -->
-    <div class="hide-on-med-and-up show-on-small-only hero-image-mobile">
-     <div class="hero-text-mobile">
-        <h1>BKrafts</h1>
-        <p>Custom scroll saw and woodcut art</p>
-        <a href = "/auth/google" class = "waves-effect green darken-1 btn">
-            Make An Order
-        </a>
-    </div>
+    <!-- For Desktop -->
+    <div class="hero-image hide-on-small-only hide-on-med-only">
+        <div class="hero-text row">
+            <div style="display: inline-block;" class="col l8 m12">
+                <h1>Welcome to BKrafts</h1>
+                <p>View our handcrafted custom wood art<br>Have something in mind?</p>
+                <a style="border-radius:25px; font-size:large;" href="/auth/google"
+                    class="waves-effect green darken-1 btn">
+                    Make An Order
+                </a>
+            </div>
+            <div style="float:right;" class="col l4">
+                <img src="images/Leaves.svg" alt="">
+            </div>
+        </div>
     </div>
 
-<div class="section"></div>
-<div class="section"></div>
-<div class="section"></div>
-<div class="section"></div>
-<div class="section"></div>
-<div class="section"></div>
-<div class="section"></div>
-<div class="section"></div>
-<div class="section"></div>
-<div class="section"></div>
-<div class="section"></div>
-<div class="section"></div>
-<div class="section"></div>
-<div class="section"></div>
-<div class="section"></div>
+    <!-- For Tablet -->
+    <div class="hero-image hide-on-small-only hide-on-large-only">
+        <div class="hero-text-tablet">
+            <div class="col m12">
+                <h1>Welcome to BKrafts</h1>
+                <p>View our handcrafted custom wood art<br>Have something in mind?</p>
+                <a style="border-radius:25px; font-size:large;" href="/auth/google"
+                    class="waves-effect green darken-1 btn">
+                    Make An Order
+                </a>
+            </div>
+            <div class="col center">
+                <img class="small-logo center" src="images/Leaves.svg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!-- For Mobile -->
+    <div class="hide-on-med-and-up show-on-small-only hero-image-mobile">
+        <div class="hero-text-mobile">
+
+            <h1> BKrafts</h1>
+            <p style="white-space: nowrap;">View our handcrafted custom wood art<br>Have something in mind?</p>
+            <a style="border-radius:25px; font-size:large;" href="/auth/google" class="waves-effect green darken-1 btn">
+                Make An Order
+            </a>
+        </div>
+    </div>
+
+    <!-- Gallery -->
+    <div id= "Gallery" class="section">
+        <div class="container center">
+            <h2 style="margin-top: 100px;" class="center">Gallery</h2>
+            <p style = "margin-bottom:0px;">Our past work</p>
+
+            <div class="hide-on-med-and-down">
+                <div class="row" style="display: flex; align-items:center;">
+                        <div style = "margin-top:0px;" class="carousel">
+                             <a class="carousel-item" href="#one!"><img
+                                    src="images/WoodElephant.JPG"></a>
+                            <a class="carousel-item" href="#two!"><img
+                                    src="images/WoodGiants.JPG"></a>
+                            <a class="carousel-item" href="#three!"><img
+                                    src="images/WoodManUnited.jpg"></a>
+                            <a class="carousel-item" href="#four!"><img
+                                    src="images/WoodHP.jpg"></a>
+                            <a class="carousel-item" href="#five!"><img
+                                    src="images/WoodYoutube.JPG"></a>
+                        </div>
+                </div>
+                
+            </div>
+                <!-- For Tablet and Below -->
+            <div class="hide-on-large-only">
+                    <div class="row" >
+                           <div class="carousel">
+                                <a class="carousel-item" href="#one!"><img
+                                        src="images/WoodElephant.jpg"></a>
+                                <a class="carousel-item" href="#two!"><img
+                                        src="images/WoodGiants.JPG"></a>
+                                <a class="carousel-item" href="#three!"><img
+                                        src="images/WoodManUnited.jpg"></a>
+                                <a class="carousel-item" href="#four!"><img
+                                        src="images/WoodHP.jpg"></a>
+                                <a class="carousel-item" href="#five!"><img
+                                        src="images/WoodYoutube.JPG"></a>
+                        </div>
+                    </div>
+            </div>
+            
+        </div>
+        <div class="section"></div>
+        <div class="section"></div>
+    </div>
+
+<!-- PRICING -->
+    <div style="margin-bottom: 100px; background-color: #fff8e1;color:black" id="Pricing" class="section">
+        <div class="container center">
+            <h2 style="margin-top: 100px;" class="center">Pricing</h2>
+            <p>These are our pricing models</p>
+            <div class="row">
+                <div class="col m4 s12">
+                    <div class="card">
+                        <div class="card">
+
+                            <div class="card-content center">
+                                <h5 class=''>Simple</h5>
+                            </div>
+                            <div class="card-content center">
+                                <h2 class='blue-text '><small>$</small>20-30</h2>
+                            </div>
+
+                            <ul class='collection center'>
+                                <li class='collection-item'>
+                                    <strong>10</strong> Hours
+                                </li>
+                                <li class='collection-item'>
+                                    <strong>Includes:</strong>
+                                </li>
+                                <li class='collection-item'>
+                                    Ply Wood Base
+                                </li>
+                                <li class='collection-item'>
+                                    Scroll Saw Cut
+                                </li>
+                                <li class='collection-item'>
+                                    Simple Oil Finish
+                                </li>
+                            </ul>
+
+                            <div class="card-content center">
+                                <div class="row">
+                                    <a class='btn green waves-effect' href="/auth/google">
+                                        Order Now
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col m4 s12">
+                    <div class="card">
+                        <div class="card">
+
+                            <div class="card-content center">
+                                <h5 class=''>Intricate</h5>
+                            </div>
+                            <div class="card-content center">
+                                <h2 class='blue-text '><small>$</small>40-50</h2>
+                            </div>
+
+                            <ul class='collection center'>
+                                <li class='collection-item'>
+                                    <strong>20</strong> Hours
+                                </li>
+                                <li class='collection-item'>
+                                    <strong>Includes:</strong>
+                                </li>
+                                <li class='collection-item'>
+                                    Ash Wood Base
+                                </li>
+                                <li class='collection-item'>
+                                    Scroll Saw Cut
+                                </li>
+                                <li class='collection-item'>
+                                    Linseed Oil Finish
+                                </li>
+                                <li class='collection-item'>
+                                    Dremmel Carved Detailing
+                                </li>
+                                <li class='collection-item'>
+                                    Lacquer Coating
+                                </li>
+                            </ul>
+
+                            <div class="card-content center">
+                                <div class="row">
+                                    <div class="col s12">
+                                        <a class='btn green waves-effect' href="/auth/google">
+                                            Order Now
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col m4 s12">
+                    <div class="card">
+                        <div class="card">
+
+                            <div class="card-content center">
+                                <h5 class=''>Extravagant</h5>
+                            </div>
+                            <div class="card-content center">
+                                <h2 class='blue-text '><small>$</small>60-99</h2>
+                            </div>
+
+                            <ul class='collection center'>
+                                <li class='collection-item'>
+                                    <strong>30+</strong> Hours
+                                </li>
+                                <li class='collection-item'>
+                                    <strong>Includes:</strong>
+                                </li>
+                                <li class='collection-item'>
+                                    Custom Wood Base
+                                </li>
+                                <li class='collection-item'>
+                                    Scroll Saw Cut
+                                </li>
+                                <li class='collection-item'>
+                                    Linseed Oil Finish
+                                </li>
+                                <li class='collection-item'>
+                                    Dremmel Carved Detaling
+                                </li>
+                                <li class='collection-item'>
+                                    Custom Stain Coating
+                                </li>
+                                <li class='collection-item'>
+                                    Multi Layered
+                                </li>
+                                <li class='collection-item'>
+                                    Themed Packaging
+                                </li>
+                            </ul>
+
+                            <div class="card-content center">
+                                <div class="row">
+                                    <div class="col s12">
+                                        <a class='btn green waves-effect' href="/auth/google">
+                                            Order Now
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
 
 
 
 
 </body>
 
-    <!-- IMPORTED SCRIPTS -->
-    
-    <!-- Materialize -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
+<!-- IMPORTED SCRIPTS -->
+
+<!-- Materialize -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
         var elems = document.querySelectorAll('.sidenav');
-        var instances = M.Sidenav.init(elems, {edge: 'right'});
+        var instances = M.Sidenav.init(elems, { edge: 'right' });
     });
-    </script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.carousel');
+        var instances = M.Carousel.init(elems);
+    });
+</script>
 
 </html>
